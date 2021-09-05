@@ -1,0 +1,35 @@
+{
+  "name": "projbackend",
+  "version": "1.0.0",
+  "description": "Created a MERN shop backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arbabhsiddiqui/mernTShirtShopBackend.git"
+  },
+  "author": "Arbab Hussain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arbabhsiddiqui/mernTShirtShopBackend/issues"
+  },
+  "homepage": "https://github.com/arbabhsiddiqui/mernTShirtShopBackend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.1.0",
+    "express-validator": "^6.12.1",
+    "formidable": "^1.2.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.0.4",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12",
+    "uuid": "^8.3.2"
+  }
+}
