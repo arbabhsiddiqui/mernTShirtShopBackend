@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 const crypto = require("crypto");
-const uuidv1 = require("uuid/v1");
+const { v4: uuidv4 } = require("uuid");
+// import { v4 as uuidv4 } from 'uuid';
 
 var userSchema = new mongoose.Schema(
   {
@@ -16,8 +17,8 @@ var userSchema = new mongoose.Schema(
       trim: true,
     },
     email: {
-      required: true,
       type: String,
+      required: true,
       unique: true,
       trim: true,
     },
@@ -25,9 +26,9 @@ var userSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
-    ency_password: {
+    encry_password: {
+      type: String,
       required: true,
-      trim: true,
     },
 
     salt: String,
@@ -47,16 +48,16 @@ userSchema
   .virtual("password")
   .set(function (password) {
     this._password = password;
-    this.salt = uuidv1();
-    this.ency_password = this.securePassword(password);
+    this.salt = uuidv4();
+    this.encry_password = this.securePassword(password);
   })
   .get(function () {
     return this._password;
   });
 
-userSchema.method = {
+userSchema.methods = {
   authenticate: function (plainPassword) {
-    return this.securePassword(plainPassword) === this.ency_password;
+    return this.securePassword(plainPassword) === this.encry_password;
   },
 
   securePassword: function (plainPassword) {
